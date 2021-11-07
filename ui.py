@@ -12,12 +12,12 @@ import _thread
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
-        self.initUI()
-        self.initValue()
+        self.initUI()  # 初始化UI
+        self.initValue()  # 初始化值
 
     def initUI(self):
-        self.setWindowTitle("CV Group 9 美发")
-        self.resize(1800, 960)
+        self.setWindowTitle("CV Group 9 美发")  # 设置窗口标题
+        self.resize(1800, 960)  # 设置窗口大小
 
         self.menubar = self.menuBar()  # 创建一个菜单栏
         self.mainMenu = self.menubar.addMenu("系统菜单")  # 添加菜单
@@ -26,7 +26,6 @@ class MainWindow(QMainWindow):
         self.selectImageAction.setShortcut('Ctrl+D')
         self.selectImageAction.setStatusTip('选择图片')
         self.selectImageAction.triggered.connect(self.openImage)
-
         self.mainMenu.addAction(self.selectImageAction)
 
         self.putResultAction = QAction(QIcon('exit.png'), '&生成结果', self)
@@ -39,7 +38,6 @@ class MainWindow(QMainWindow):
         self.text0.setFixedSize(400, 200)
         self.text0.setText(" CV 第9组\n 曹润琪（组长）\n 郭颖 李杰  廖鑫\n 刘文江 李奇伟  房敏营")
         self.text0.move(0, 60)
-        # self.text0.setStyleSheet("QLabel{background:white;}")
         self.text0.setStyleSheet("QLabel{background:white;}"
                                  "QLabel{color:rgb(300,300,300,120);font-size:30px;font-weight:bold;font-family:宋体;}")
 
@@ -47,8 +45,6 @@ class MainWindow(QMainWindow):
         self.label0.setFixedSize(400, 300)
         self.label0.move(0, 360)
         self.label0.setStyleSheet("QLabel{background:white;}")
-        # self.label.setStyleSheet("QLabel{background:white;}"
-        #                          "QLabel{color:rgb(300,300,300,120);font-size:10px;font-weight:bold;font-family:宋体;}")
 
         self.label1 = QLabel(self)
         self.label1.setFixedSize(400, 300)
